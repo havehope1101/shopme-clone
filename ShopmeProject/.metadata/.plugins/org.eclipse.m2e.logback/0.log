@@ -1,0 +1,30 @@
+2023-02-22 08:29:21,608 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-02-22 08:29:51,293 [Worker-1: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.shopme:ShopmeBackEnd:0.0.1-SNAPSHOT @ F:\git pj\shopme-clone\ShopmeProject\ShopmeWebParent\ShopmeBackEnd\pom.xml.
+2023-02-22 08:29:51,293 [Worker-0: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.shopme:ShopmeCommon:0.0.1-SNAPSHOT @ F:\git pj\shopme-clone\ShopmeProject\ShopmeCommon\pom.xml.
+2023-02-22 08:29:52,698 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-22 08:29:52,715 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-22 08:29:52,719 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory F:\git pj\shopme-clone\ShopmeProject\ShopmeWebParent\ShopmeBackEnd\src\test\resources
+2023-02-22 08:29:53,075 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-22 08:29:53,077 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-22 08:29:53,080 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory F:\git pj\shopme-clone\ShopmeProject\ShopmeWebParent\ShopmeBackEnd\src\test\resources
+2023-02-22 08:29:53,317 [Worker-3: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.shopme:ShopmeCommon:0.0.1-SNAPSHOT @ F:\git pj\shopme-clone\ShopmeProject\ShopmeCommon\pom.xml.
+2023-02-22 08:29:53,597 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-22 08:29:53,609 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-22 08:29:53,612 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory F:\git pj\shopme-clone\ShopmeProject\ShopmeCommon\src\test\resources
+2023-02-22 08:29:53,841 [Worker-3: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.shopme:ShopmeFrontEnd:0.0.1-SNAPSHOT @ F:\git pj\shopme-clone\ShopmeProject\ShopmeWebParent\ShopmeFrontEnd\pom.xml.
+2023-02-22 08:29:54,163 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-22 08:29:54,175 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-22 08:29:54,178 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory F:\git pj\shopme-clone\ShopmeProject\ShopmeWebParent\ShopmeFrontEnd\src\test\resources
+2023-02-22 08:29:54,658 [Worker-3: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using NULL lifecycle mapping for MavenProject: com.shopme:ShopmeWebParent:0.0.1-SNAPSHOT @ F:\git pj\shopme-clone\ShopmeProject\ShopmeWebParent\pom.xml.
+2023-02-22 08:29:54,803 [Worker-3: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.shopme:ShopmeBackEnd:0.0.1-SNAPSHOT @ F:\git pj\shopme-clone\ShopmeProject\ShopmeWebParent\ShopmeBackEnd\pom.xml.
+2023-02-22 08:29:54,852 [Worker-3: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.shopme:ShopmeFrontEnd:0.0.1-SNAPSHOT @ F:\git pj\shopme-clone\ShopmeProject\ShopmeWebParent\ShopmeFrontEnd\pom.xml.
+2023-02-22 08:29:55,972 [Worker-8: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.shopme:ShopmeCommon:0.0.1-SNAPSHOT @ F:\git pj\shopme-clone\ShopmeProject\ShopmeCommon\pom.xml.
+2023-02-22 08:29:56,334 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-22 08:29:56,334 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-22 08:29:56,337 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory F:\git pj\shopme-clone\ShopmeProject\ShopmeWebParent\ShopmeBackEnd\src\test\resources
+2023-02-22 08:29:56,395 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-22 08:29:56,405 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-22 08:29:56,408 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory F:\git pj\shopme-clone\ShopmeProject\ShopmeCommon\src\test\resources
+2023-02-22 08:29:56,547 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-22 08:29:56,563 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-22 08:29:56,566 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory F:\git pj\shopme-clone\ShopmeProject\ShopmeWebParent\ShopmeFrontEnd\src\test\resources
