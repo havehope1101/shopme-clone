@@ -16,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -23,8 +24,13 @@ public class WebSecurityConfig {
 	
 	@Bean
 	public UserDetailsService userDetailsService() {
-			return new ShopmeUserDetailsService();
+		return new ShopmeUserDetailsService();
 		}
+	
+	 @Bean
+	 public SecurityContextHolderAwareRequestFilter securityContextHolderAwareRequestFilter() {
+	    return new SecurityContextHolderAwareRequestFilter();
+	  }
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
@@ -49,6 +55,7 @@ public class WebSecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
 		http
 				.authorizeHttpRequests()
+				.requestMatchers("/users/**").hasAuthority("Admin")
 				.anyRequest().authenticated()
 				.and()
 				.formLogin()
