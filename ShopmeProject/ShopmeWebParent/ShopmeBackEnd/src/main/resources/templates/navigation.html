@@ -10,7 +10,7 @@
 		<a class="navbar-brand" th:href="@{/}">
 			<img th:src="@{/images/ShopmeAdminSmall.png}" />
 		</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbar">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavbar">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="topNavbar">
@@ -75,7 +75,7 @@
 					<li>
 						<form name="logout" th:action="@{/logout}" method="post">
 						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-						<td><input name="logout" type="submit" value="Logout" /></td>
+						<input name="logout" type="submit" value="Logout" />
 						</form>
 					<li>										
 			</ul>
