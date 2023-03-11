@@ -55,6 +55,7 @@
 					</td>
 					<td>[[${cat.name}]]</td>
 					<td>[[${cat.alias}]]</td>
+
 					<td>
 						<div th:replace="fragments :: category_status" />
 					</td>
@@ -65,9 +66,30 @@
 			</tbody>
 		</table>
 	</div>
+	
+	<div th:replace="modal_fragments :: confirm_modal" />
 
 	<div th:replace="fragments :: footer"></div>
 
 </div>
+
+<script type="text/javascript">
+		$(document).ready(function() {
+		$(".link-delete").on("click", function(e) {
+			e.preventDefault();
+			link = $(this);
+			//alert($(this).attr("href"));
+			catId = link.attr("catId");
+			$("#yesButton").attr("href", link.attr("href"));
+			$("#confirmText").text("Are you sure you want to delete this category ID ?");
+			$("#confirmModal").modal("show");
+		});
+	});		
+
+	function clearFilter() {
+	window.location = "[[@{/categories}]]";	
+}
+
+</script>
 </body>
 </html>
