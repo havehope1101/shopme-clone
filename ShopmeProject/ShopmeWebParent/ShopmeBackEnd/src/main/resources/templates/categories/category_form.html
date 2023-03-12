@@ -90,7 +90,7 @@
 
 	$(document).ready(function() {
 		$("#buttonCancel").on("click", function() {
-			window.location = "/ShopmeAdmin/categories";
+			window.location = "[[@{/categories}]]";
 		});
 		
 		$("#fileImage").change(function() {
@@ -107,7 +107,17 @@
 		});	
 	});
 
-function checkUnique(form) {
+		function showImageThumbnail(fileInput) {
+		var file = fileInput.files[0];
+		var reader = new FileReader();
+		reader.onload = function(e) {
+			$("#thumbnail").attr("src", e.target.result);
+		};
+
+		reader.readAsDataURL(file);
+	}
+	
+	function checkUnique(form) {
 		catId = $("#id").val();
 		catName = $("#name").val();
 		catAlias = $("#alias").val();

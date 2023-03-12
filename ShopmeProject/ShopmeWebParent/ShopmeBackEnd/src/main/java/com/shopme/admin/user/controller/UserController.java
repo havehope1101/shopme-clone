@@ -89,8 +89,8 @@ public class UserController {
 		if (!multipartFile.isEmpty()) {
 			String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
 			user.setPhotos(fileName);
-			User saveUser = service.save(user);
 			
+			User saveUser = service.save(user);	
 			String uploadDir = "user-photos/" + saveUser.getId();
 		
 			FileUploadUtil.cleanDir(uploadDir);
