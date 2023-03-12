@@ -15,19 +15,7 @@
 		[[${message}]]
 	</div>
 	
-	<div>
-		<form th:action="@{/users/page/1}" class="form-inline m-3">
-			<input type="hidden" name="sortField" th:value="${sortField}" />
-			<input type="hidden" name="sortDir" th:value="${sortDir}" />
-
-			Filter:&nbsp;
-			<input type="search" name="keyword" width=50% th:value="${keyword}" class="form-group mx-sm-3 mb-2" required/>
-			&nbsp;&nbsp;
-			<input type="submit" value="Search" class="btn btn-primary" />
-			&nbsp;&nbsp;
-			<input type="button" value="Clear" class="btn btn-secondary" onclick="clearFilter()" />
-		</form>
-	</div>
+	<div th:replace="fragments :: search_form('/users/page/1')" />
 	
 		<table class="table table-bordered table-striped table-hover table-responsive-xl">
 			<thead class="table-dark">

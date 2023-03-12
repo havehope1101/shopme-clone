@@ -16,21 +16,7 @@
 		[[${message}]]
 	</div>
 
-
-	<div>
-		<form th:action="@{/categories/page/1}" class="form-inline m-3">
-			Filter:&nbsp;
-			<input type="search" name="keyword" width=50% th:value="${keyword}" class="form-group mx-sm-3 mb-2" required/>
-			&nbsp;&nbsp;
-			<button type="submit" class="btn btn-primary">
-				<i class="fas fa-search"></i>
-			</button>
-			&nbsp;&nbsp;
-			<button type="button" class="btn btn-secondary" onclick="clearFilter()">
-				<i class="fas fa-eraser"></i>
-			</button>
-		</form>
-	</div>
+	<div th:replace="fragments :: search_form('/categories/page/1')" />
 
 	<div class="full-details">
 			<table class="table table-bordered table-striped table-hover table-responsive-xl">
@@ -39,7 +25,7 @@
 					<th>ID</th>
 					<th>Category Image</th>
 					<th>
-						<a class="text-white" th:href="@{'/categories/page/' + ${pageNum} + '?sortDir=' + ${reverseSortDir}}">Category Name</a>
+						<a class="text-white" th:href="@{'/categories/page/' + ${pageNum} + '?sortDir=' + ${reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}">Category Name</a>
 						<span th:class="${reverseSortDir == 'desc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}" ></span>						
 					</th>
 					<th>Alias</th>
@@ -66,6 +52,13 @@
 			</tbody>
 		</table>
 	</div>
+	
+	<div th:if="${keyword != null}" class="text-center">
+		<span>Search result does not show categories in hierarchical form</span>
+		<div th:replace="fragments :: pagination('/categories', 'categories')"></div>
+	</div>
+
+	<th:block th:unless="${keyword != null}">
 	
 	<div th:replace="fragments :: pagination('/categories', 'top-level categories')"></div>
 	
