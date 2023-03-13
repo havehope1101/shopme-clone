@@ -17,5 +17,7 @@ public interface BrandRepository extends PagingAndSortingRepository<Brand, Integ
 	void deleteById(Integer id);
 	
 	public Long countById(Integer id);
+	
+	public Brand findByName(String name);
 
 }
