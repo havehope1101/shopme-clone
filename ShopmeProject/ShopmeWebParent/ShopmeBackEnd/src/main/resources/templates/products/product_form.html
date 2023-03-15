@@ -45,7 +45,13 @@
 		  <div class="tab-pane" id="images" role="tabpanel">
 		  	<div th:replace="products/product_images :: content"></div>
 		  </div>
-		  <div class="tab-pane" id="details" role="tabpanel">Details</div>
+		  	  <div class="tab-pane p-3" id="details" role="tabpanel">
+		  	<div th:replace="products/product_details :: content"></div>
+		  	<div>
+		  		<input type="button" class="btn btn-secondary" value="Add More Detail"
+		  			onclick="addNextDetailSection()" />
+		  	</div>	
+		  </div>
 		  <div class="tab-pane p-3" id="shipping" role="tabpanel">
 		  	<div th:replace="products/product_shipping :: content"></div>
 		  </div>
@@ -63,10 +69,11 @@
 
 </div>
 <script type="text/javascript">
-	MAX_FILE_SIZE = 502400;
+	MAX_FILE_SIZE = 5024000;
 	moduleURL = "[[@{/products}]]";
 	brandModuleURL = "[[@{/brands}]]";
 	defaultImageThumbnailSrc = "[[@{/images/image-thumbnail.png}]]";
+	checkUniqueUrl = "[[@{/products/check_unique}]]";
 
 	dropdownBrands = $("#brand");
 	dropdownCategories = $("#category");
@@ -161,11 +168,11 @@ function checkUnique(form) {
 
 		csrfValue = $("input[name='_csrf']").val();
 
-		url = "[[@{/products/check_unique}]]";
+		
 
 		params = {id: productId, name: productName, _csrf: csrfValue};
 
-		$.post(url, params, function(response) {
+		$.post(checkUniqueUrl, params, function(response) {
 			if (response == "OK") {
 				form.submit();
 			} else if (response == "Duplicate") {
@@ -216,6 +223,39 @@ function checkFileSize(fileInput) {
 		
 		return true;
 	}	
+}
+
+function addNextDetailSection() {
+	allDivDetails = $("[id^='divDetail']");
+	divDetailsCount = allDivDetails.length;
+
+	htmlDetailSection = `
+		<div class="form-inline" id="divDetail${divDetailsCount}">
+			<label class="m-3">Name:</label>
+			<input type="text" class="form-control w-25" name="detailNames" maxlength="255" />
+			<label class="m-3">Value:</label>
+			<input type="text" class="form-control w-25" name="detailValues" maxlength="255" />
+		</div>	
+	`;
+
+	$("#divProductDetails").append(htmlDetailSection);
+
+	previousDivDetailSection = allDivDetails.last();
+	previousDivDetailID = previousDivDetailSection.attr("id");
+
+	htmlLinkRemove = `
+		<a class="btn fas fa-times-circle fa-2x icon-dark"
+			href="javascript:removeDetailSectionById('${previousDivDetailID}')"
+			title="Remove this detail"></a>
+	`;
+
+	previousDivDetailSection.append(htmlLinkRemove);
+
+	$("input[name='detailNames']").last().focus();
+}
+
+function removeDetailSectionById(id) {
+	$("#" + id).remove();
 }
 
 function showModalDialog(title, message) {
