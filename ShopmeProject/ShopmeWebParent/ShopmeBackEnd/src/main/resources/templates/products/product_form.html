@@ -16,6 +16,8 @@
 		enctype="multipart/form-data"
 		th:object="${product}">
 		<input type="hidden" th:field="*{id}" />
+		<input th:if="${product.category != null}" type="hidden" 
+			id="categoryId" th:value="${product.category.id}" />
 	<div>
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
 		  <li class="nav-item">
@@ -83,6 +85,11 @@
 	dropdownCategories = $("#category");
 
 	$(document).ready(function() {
+		$("a[name='linkRemoveDetail']").each(function(index) {
+		$(this).click(function() {
+			removeDetailSectionByIndex(index);
+		});
+	});
 	
 		$("#shortDescription").richText();
 		$("#fullDescription").richText();
@@ -91,16 +98,36 @@
 			dropdownCategories.empty();
 			getCategories();
 		});	
-	});
-		getCategories();
-		
+
+		getCategoriesForNewForm();
+});	
+
+function getCategoriesForNewForm() {
+	catIdField = $("#categoryId");
+	editMode = false;
+
+	if (catIdField.length) {
+		editMode = true;
+	}
+
+	if (!editMode) getCategories();
+}
+
 		$("input[name='extraImage']").each(function(index) {
 			extraImagesCount++;
 
 			$(this).change(function() {
+				if (!checkFileSize(this)) {
+					return;
+				}	
 				showExtraImageThumbnail(this, index);
+		});		
+	});
+	
+		$("a[name='linkRemoveExtraImage']").each(function(index) {
+		$(this).click(function() {
+			removeExtraImage(index);
 		});
-		
 	});
 
 function showExtraImageThumbnail(fileInput, index) {
@@ -257,6 +284,10 @@ function addNextDetailSection() {
 function removeDetailSectionById(id) {
 	$("#" + id).remove();
 }
+
+function removeDetailSectionByIndex(index) {
+	$("#divDetail" + index).remove();	
+}	
 
 function showModalDialog(title, message) {
 	$("#modalTitle").text(title);
