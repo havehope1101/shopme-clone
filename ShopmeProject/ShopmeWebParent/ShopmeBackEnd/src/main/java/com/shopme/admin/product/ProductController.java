@@ -51,7 +51,9 @@ public class ProductController {
 		Product product = new Product();
 		product.setEnabled(true);
 		product.setInStock(true);
-
+		Integer numberOfExistingExtraImages = product.getImages().size();
+		
+		model.addAttribute("numberOfExistingExtraImages", numberOfExistingExtraImages);
 		model.addAttribute("product", product);
 		model.addAttribute("listBrands", listBrands);
 		model.addAttribute("pageTitle", "Create New Product");
