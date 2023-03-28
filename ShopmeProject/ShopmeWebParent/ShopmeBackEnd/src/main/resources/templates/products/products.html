@@ -90,6 +90,10 @@
 </div>
 
 <script type="text/javascript">
+	function clearFilter() {
+	window.location = moduleURL;	
+}
+
 		moduleURL = "[[@{/products}]]";
 		$(document).ready(function() {
 		
@@ -108,12 +112,11 @@
 			
 			linkDetailURL = $(this).attr("href");
 			$("#detailModal").modal("show").find(".modal-content").load(linkDetailURL);
+			
 		});
 	});		
 
-	function clearFilter() {
-	window.location = moduleURL;	
-}
+
 
 </script>
 </body>

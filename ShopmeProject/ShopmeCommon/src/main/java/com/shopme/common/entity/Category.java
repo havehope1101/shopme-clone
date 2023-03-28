@@ -33,6 +33,9 @@ public class Category {
 	private String image;
 
 	private boolean enabled;
+	
+	@Column(name = "all_parent_ids", length = 256, nullable = true)
+	private String allParentIDs;
 
 	@OneToOne
 	@JoinColumn(name = "parent_id")
@@ -179,6 +182,14 @@ public class Category {
 	@Override
 	public String toString() {
 		return this.name;
+	}
+	
+	public String getAllParentIDs() {
+		return allParentIDs;
+	}
+
+	public void setAllParentIDs(String allParentIDs) {
+		this.allParentIDs = allParentIDs;
 	}
 	
 }
