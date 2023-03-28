@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.shopme.common.entity.Product;
+import com.shopme.common.exception.ProductNotFoundException;
 
 @Service
 @Transactional
@@ -97,7 +98,6 @@ public class ProductService {
 		
 		repo.deleteById(id);
 	}
-
 	public Product get(Integer id) throws ProductNotFoundException {
 		try {
 			return repo.findById(id).get();
@@ -106,5 +106,4 @@ public class ProductService {
 		}
 	}
 	
-
 }
