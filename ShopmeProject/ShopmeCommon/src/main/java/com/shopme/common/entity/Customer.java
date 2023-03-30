@@ -45,6 +45,10 @@ public class Customer {
 	
 	public Customer() {
 	}
+	
+	public Customer(Integer id) {
+		this.id = id;
+	}
 
 	public Integer getId() {
 		return id;
@@ -129,6 +133,10 @@ public class Customer {
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", email=" + email + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+	}
+	
+	public String getFullName() {
+		return firstName + " " + lastName;
 	}
 
 }
