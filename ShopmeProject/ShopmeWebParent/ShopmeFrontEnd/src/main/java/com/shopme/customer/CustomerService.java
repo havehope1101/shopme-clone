@@ -34,4 +34,13 @@ public class CustomerService {
 		customerRepo.save(customerInForm);
 	}
 	
+	private void encodePassword(Customer customer) {
+		String encodedPassword = passwordEncoder.encode(customer.getPassword());
+		customer.setPassword(encodedPassword);
+	}
+	
+	public Customer getCustomerByEmail(String email) {
+		return customerRepo.findByEmail(email);
+	}
+
 }
