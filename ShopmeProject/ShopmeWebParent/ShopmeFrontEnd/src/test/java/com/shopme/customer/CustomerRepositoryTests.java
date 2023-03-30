@@ -11,6 +11,7 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.annotation.Rollback;
 
 import com.shopme.common.entity.Customer;
@@ -24,14 +25,14 @@ public class CustomerRepositoryTests {
 	@Autowired private TestEntityManager entityManager;
 
 	@Test
-	public void testCreateCustomer1() {
+	public void testCreateCustomer3() {
 	
 		Customer customer = new Customer();
-		customer.setFirstName("David");
-		customer.setLastName("Fountaine");
+		customer.setFirstName("tankyy");
+		customer.setLastName("chainyy");
 		customer.setPassword("password123");
-		customer.setEmail("david.s.fountaine@gmail.com");
-		customer.setPhoneNumber("312-462-7518");
+		customer.setEmail("guesttt@gmail.com");
+		customer.setPhoneNumber("312-46-74256");
 		customer.setAddressLine1("1927  West Drive");
 		customer.setCreatedTime(new Date());
 
@@ -126,4 +127,5 @@ public class CustomerRepositoryTests {
 		Customer customer = repo.findById(customerId).get();
 		assertThat(customer.isEnabled()).isTrue();
 	}
+		
 }
