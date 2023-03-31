@@ -45,4 +45,10 @@ public class ShoppingCartService {
 	public List<CartItem> listCartItems(Customer customer) {
 		return cartRepo.findByCustomer(customer);
 	}
+	
+	public void removeProduct(Integer productId, Customer customer) {
+		cartRepo.deleteByCustomerAndProduct(customer.getId(), productId);
+	}
+
+
 }
