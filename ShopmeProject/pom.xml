@@ -7,12 +7,9 @@
   <name>ShopmeProject</name>
   <description>Root Project</description>
   
-  <profiles>
-    <profile>
   		<modules>
 	  		<module>shopmeCommon</module>
 	  		<module>ShopmeWebParent</module>
   		</modules>
-     </profile>
-</profiles>		
+
 </project>
