@@ -1,0 +1,9 @@
+com\shopme\product\ProductController.class
+com\shopme\product\ProductRepository.class
+com\shopme\MvcConfig.class
+com\shopme\security\WebSecurityConfig.class
+com\shopme\ShopmeFrontEndApplication.class
+com\shopme\category\CategoryRepository.class
+com\shopme\category\CategoryService.class
+com\shopme\MainController.class
+com\shopme\product\ProductService.class

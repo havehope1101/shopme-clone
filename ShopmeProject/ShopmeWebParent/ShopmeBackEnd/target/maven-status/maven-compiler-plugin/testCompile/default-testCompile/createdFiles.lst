@@ -1,0 +1,7 @@
+com\shopme\admin\user\PaswordEncoderTest.class
+com\shopme\admin\brand\BrandRepositoryTests.class
+com\shopme\admin\product\ProductRepositoryTests.class
+com\shopme\admin\user\UserRepositoryTests.class
+com\shopme\admin\user\RoleRepositoryTests.class
+com\shopme\admin\category\CategoryRepositoryTests.class
+com\shopme\admin\category\CategoryServiceTests.class
